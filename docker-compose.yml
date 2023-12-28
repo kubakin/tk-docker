@@ -16,16 +16,12 @@ services:
     image: github.com/kubakin/tk-game.git
     container_name: tk-front
     restart: always
-    environment:
-      - TEST_D=val
     build:
       dockerfile: Dockerfile
       context: github.com/kubakin/tk-game.git
-    env_file:
-      - .env
     ports:
       - '0.0.0.0:3000:3000'
-    command: npm start
+    command: npm run prod
   db:
     container_name: db
     image: postgres:12.2-alpine
