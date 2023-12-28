@@ -12,6 +12,17 @@ services:
       - .env
     ports:
       - '0.0.0.0:3003:3003'
+  front:
+    image: github.com/kubakin/tk-game.git
+    container_name: tk-front
+    restart: always
+    build:
+      dockerfile: Dockerfile
+      context: github.com/kubakin/tk-game.git
+    env_file:
+      - .env.front
+    ports:
+      - '0.0.0.0:3000:3000'
   db:
     container_name: db
     image: postgres:12.2-alpine
@@ -23,4 +34,3 @@ services:
       - /var/lib/tk/postgresql:/var/lib/postgresql/data
     ports:
       - '65432:5432'
-
