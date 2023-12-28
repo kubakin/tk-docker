@@ -10,6 +10,8 @@ services:
       context: github.com/kubakin/tk-back-ddd-cqrs.git
     env_file:
       - .env
+    ports:
+      - '0.0.0.0:3003:3003'
   db:
     container_name: db
     image: postgres:12.2-alpine
