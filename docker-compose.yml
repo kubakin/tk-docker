@@ -2,7 +2,7 @@ version: '3.7'
 
 services:
   app:
-    image: github.com/kubakin/tk-back-ddd-cqrs.git:main
+    image: https://github.com/kubakin/tk-back-ddd-cqrs.git:main
     container_name: tk-back
     restart: always
     build:
