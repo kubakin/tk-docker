@@ -16,6 +16,8 @@ services:
     image: github.com/kubakin/tk-game.git
     container_name: tk-front
     restart: always
+    environment:
+      - TEST_D=val
     build:
       dockerfile: Dockerfile
       context: github.com/kubakin/tk-game.git
