@@ -23,6 +23,7 @@ services:
       - .env.front
     ports:
       - '0.0.0.0:3000:3000'
+    command: npm run prod
   db:
     container_name: db
     image: postgres:12.2-alpine
