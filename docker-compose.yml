@@ -23,6 +23,17 @@ services:
       context: github.com/kubakin/tk-game.git
     ports:
       - '0.0.0.0:3000:3000'
+  admin:
+    image: github.com/kubakin/tk-admin.git
+    container_name: tk-admin
+    restart: always
+    build:
+      args:
+        - REACT_APP_HOST=45.141.87.25:3003
+      dockerfile: Dockerfile
+      context: github.com/kubakin/tk-admin.git
+    ports:
+      - '0.0.0.0:3001:3001'
   db:
     container_name: db
     image: postgres:12.2-alpine
