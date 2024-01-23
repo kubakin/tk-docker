@@ -5,6 +5,8 @@ services:
     image: github.com/kubakin/tk-back-ddd-cqrs.git
     container_name: tk-back
     restart: always
+    depends_on:
+      - db
     build:
       dockerfile: Dockerfile
       context: github.com/kubakin/tk-back-ddd-cqrs.git
